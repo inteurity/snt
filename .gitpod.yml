@@ -16,7 +16,9 @@ tasks:
       rustup install stable
       rustup target add wasm32-unknown-unknown --toolchain nightly
       cargo install --force --git https://github.com/paritytech/substrate subkey
-      yarn add @polkadot/api
+      git clone https://github.com/substrate-developer-hub/substrate-front-end-template.git
+      cd substrate-front-end-template
+      yarn install
     command: |
       rustup update nightly
       rustup update stable
