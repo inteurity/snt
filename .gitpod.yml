@@ -19,10 +19,11 @@ tasks:
       cargo install --force --git https://github.com/paritytech/substrate subkey
       yarn add @polkadot/api
     command: |
-      make init
-      make build
-      echo '"make check" && "make build" did not run automatically if there was no prebuild triggered. Please run these commands manually as necessary.'
+      rustup update nightly
+      rustup update stable
+      rustup target add wasm32-unknown-unknown --toolchain nightly
+      echo '"cargo build" did not run automatically if there was no prebuild triggered. Please run these commands manually as necessary.'
     prebuild: |
-      make init
-      make check
-      make build
+      rustup update nightly
+      rustup update stable
+      rustup target add wasm32-unknown-unknown --toolchain nightly
